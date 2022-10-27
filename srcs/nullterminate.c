@@ -1,8 +1,15 @@
 #include "sh.h"
 
-// NUL-terminate all the counted strings.
+/**
+ * It walks the command tree and NUL-terminates all the counted strings
+ * 
+ * @param cmd The command to be executed.
+ * 
+ * @return The address of the first byte of the allocated block.
+ */
 t_cmd*	nulterminate(t_cmd *cmd)
 {
+// NUL-terminate all the counted strings.
 	int i;
 	t_backcmd	*bcmd;
 	t_execcmd	*ecmd;

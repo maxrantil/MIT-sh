@@ -1,5 +1,15 @@
 #include "sh.h"
 
+/**
+ * It parses a line of input,
+ * which is a sequence of commands separated by semicolons, and returns a command
+ * tree representing the line
+ * 
+ * @param ps pointer to the start of the string
+ * @param es end of string
+ * 
+ * @return A pointer to a command structure.
+ */
 t_cmd	*parseline(char **ps, char *es)
 {
 	t_cmd *cmd;

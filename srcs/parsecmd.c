@@ -1,5 +1,13 @@
 #include "sh.h"
 
+/**
+ * It parses a command line,
+ * and returns a pointer to a structure that represents the command line
+ * 
+ * @param s the string to parse
+ * 
+ * @return A pointer to a t_cmd struct.
+ */
 t_cmd	*parsecmd(char *s)
 {
 	char *es;

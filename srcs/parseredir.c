@@ -1,5 +1,15 @@
 #include "sh.h"
 
+/**
+ * It parses the redirection operators <, >, and >>, and returns a command structure with the
+ * appropriate redirection information
+ * 
+ * @param cmd the command to redirect
+ * @param ps pointer to the start of the command
+ * @param es end of string
+ * 
+ * @return A pointer to a t_cmd struct.
+ */
 t_cmd*	parseredirs(t_cmd *cmd, char **ps, char *es)
 {
 	int		tok;

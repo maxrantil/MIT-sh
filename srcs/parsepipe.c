@@ -1,5 +1,13 @@
 #include "sh.h"
 
+/**
+ * It parses a command, and if it sees a pipe, it parses another command and returns a pipe command
+ * 
+ * @param ps pointer to the start of the string
+ * @param es end of string
+ * 
+ * @return A pointer to a t_cmd struct.
+ */
 t_cmd	*parsepipe(char **ps, char *es)
 {
 	t_cmd *cmd;

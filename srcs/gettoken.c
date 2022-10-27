@@ -1,5 +1,17 @@
 #include "sh.h"
 
+/**
+ * It takes a pointer to a string, a pointer to the end of the string, and two pointers to pointers to
+ * characters. It returns a token type, and sets the two pointers to point to the beginning and end of
+ * the token
+ * 
+ * @param ps pointer to the start of the string
+ * @param es end of string
+ * @param q the start of the token
+ * @param eq pointer to the end of the token
+ * 
+ * @return The type of token.
+ */
 int	gettoken(char **ps, char *es, char **q, char **eq)
 {
 	char *s;
@@ -45,5 +57,3 @@ int	gettoken(char **ps, char *es, char **q, char **eq)
 	*ps = s;
 	return (ret);
 }
-
-

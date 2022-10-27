@@ -1,5 +1,10 @@
 #include "sh.h"
 
+/**
+ * It runs a command
+ * 
+ * @param cmd The command to run.
+ */
 // Execute cmd.  Never returns.
 void	runcmd(t_cmd *cmd)
 {

@@ -1,5 +1,15 @@
 #include "sh.h"
 
+/**
+ * It parses a command,
+ * which is either a parenthesized block, or a sequence of tokens separated by
+ * redirection operators, and terminated by a pipe, semicolon, or ampersand
+ * 
+ * @param ps pointer to the start of the command string
+ * @param es end of string
+ * 
+ * @return A pointer to a t_cmd struct.
+ */
 t_cmd*	parseexec(char **ps, char *es)
 {
 	char		*q;
