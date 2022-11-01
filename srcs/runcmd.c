@@ -25,7 +25,7 @@ void	runcmd(t_cmd *cmd)
 
 		case EXEC:
 			ecmd = (t_execcmd*)cmd;
-			if(ecmd->argv[0] == 0)
+			if (ecmd->argv[0] == 0)
 				exit(1);
 			execvp(ecmd->argv[0], ecmd->argv);
 			dprintf(2, "exec %s failed\n", ecmd->argv[0]);
@@ -34,7 +34,7 @@ void	runcmd(t_cmd *cmd)
 		case REDIR:
 			rcmd = (t_redircmd*)cmd;
 			close(rcmd->fd);
-			if(open(rcmd->file, rcmd->mode) < 0)
+			if (open(rcmd->file, rcmd->mode) < 0)
 			{
 				dprintf(2, "open %s failed\n", rcmd->file);
 				exit(1);
@@ -44,7 +44,7 @@ void	runcmd(t_cmd *cmd)
 
 		case LIST:
 			lcmd = (t_listcmd*)cmd;
-			if(fork1() == 0)
+			if (fork1() == 0)
 				runcmd(lcmd->left);
 			wait(0);
 			runcmd(lcmd->right);
@@ -78,7 +78,7 @@ void	runcmd(t_cmd *cmd)
 
 		case BACK:
 			bcmd = (t_backcmd*)cmd;
-			if(fork1() == 0)
+			if (fork1() == 0)
 				runcmd(bcmd->cmd);
 			break;
 	}

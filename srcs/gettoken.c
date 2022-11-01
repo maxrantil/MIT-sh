@@ -18,12 +18,12 @@ int	gettoken(char **ps, char *es, char **q, char **eq)
 	int ret;
 
 	s = *ps;
-	while(s < es && strchr(" \t\r\n\v", *s))
+	while (s < es && strchr(" \t\r\n\v", *s))
 		s++;
-	if(q)
+	if (q)
 		*q = s;
 	ret = *s;
-	switch(*s)
+	switch (*s)
 	{
 		case 0:
 			break;
@@ -37,7 +37,7 @@ int	gettoken(char **ps, char *es, char **q, char **eq)
 			break;
 		case '>':
 			s++;
-			if(*s == '>')
+			if (*s == '>')
 			{
 				ret = '+';
 				s++;
@@ -49,10 +49,9 @@ int	gettoken(char **ps, char *es, char **q, char **eq)
 				s++;
 			break;
 	}
-	if(eq)
+	if (eq)
 		*eq = s;
-
-	while(s < es && strchr(" \t\r\n\v", *s))
+	while (s < es && strchr(" \t\r\n\v", *s))
 		s++;
 	*ps = s;
 	return (ret);
